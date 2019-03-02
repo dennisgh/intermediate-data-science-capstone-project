@@ -28,18 +28,62 @@ e.g. https://www.bloomberg.com/research/stocks/people/person.asp?personId=500357
 ## 4. In brief, outline your approach to solving this problem
 
 1. Load corporate financials into Pandas. Reduce data, merge ca. 40 quarterly
-data sets into a single file, perform EDA. Desired data table:
-| Company | Quarter Ending | Fin Measure 1 | Measure 2 | CEO   | COO | CFO    |
-|---------|----------------|---------------|-----------|-------|-----|--------|
-| Apple   | 31-Mar-2013    | $10,000,000   | 32%       | Jim   | Jon | Jessie |
-| Apple   | 31-Dec-2012    | $8,500,000    | 35%       | Julie | Jon | Jessie |
+data sets into a single file, perform EDA.
 
 2. Develop a web scraping script to identify key corporate people, and download their public biographies.
 
 3. Use Natural Language Processing to extract information from this biography.
 https://www.nltk.org/book/ch06.html
 
-4. Use statistical methods to identify statistically significant correlations between corporate performance and C-level personnel characteristics.
+Heuristics used in the analysis, would include:
+* A list of foreign universities. (int'l education)
+* A list of foreign cities/countries. (int'l experience)
+* Look for common expressions such as "joined company in", "graduated in",
+"started his/her career",
+
+4. Calculate features and train machine learning models.
+
+Specifically,  
+
+* The analysis will focus around 3 pairs:  
+  CEO and Revenue/Sales.  
+    CEO: responsible for Sales performance.  
+  COO and Operating Margin.  
+    COO: responsible for Cost of Sales and Operating Costs.  
+  CFO and Net Income Margin LESS Operating Margin.  
+    CFO: responsible for taxes paid, financing expenses and depreciation.  
+
+* CxO characteristics to be analyzed:  
+  Age, Gender, Tenure at company, Career length, int'l education,  
+  Ivy League Education, int'l professional experience, FirstTimeCxO
+
+* Two sets of target data will be considered:  
+  Short-term: n=2 and x=5%, Long-term: n=5 and x=10%:  
+  [(Fin_metric_n_yr_after_hire)/(Fin_metric_at_hire)]/
+  [(Fin_metric_at_hire)/(Fin_metric_n_yr_before_hire)] > (1+x)
+
+  Or in words: did the hire improve the growth rate of the  
+  metric in question by at least x % over period of n years,  
+  compared to the preceding period of n years?
+
+  eg. in 2008, ACME Sales totalled $5MM. in 2010, they totalled $6MM (+20%).  
+  In 2010 a new CEO joined. In 2012, sales totaled $7.4MM (+23.3%).  
+  Our target metric yields False, as x = (1.233/1.2)-1 = 2.8% < 5%.  
+  The hire of the CEO did not lead to an increase  
+  of sales growth larger than 5%.
+
+ * The short-term and long-term benchmark pairs are subject to change.  
+   If EDA reveals a typical boost in performance of 15% after 3 years,  
+   that could be the long-term pair.
+
+ * Ultimately, 6 machine learning models will need to be fitted:  
+   X: CEO_chars
+   Y: Short_term_sign_grwth_Rev, Long_term_sign_grwth_Rev
+   X: COO_chars
+   Y: Short_term_sign_grwth_OpMa, Long_term_sign_grwth_OpMa
+   X: CFO_chars
+   Y: Short_term_sign_grwth_FinMet, Long_term_sign_grwth_FinMet
+
 
 ## 5. What are your deliverables?
 
