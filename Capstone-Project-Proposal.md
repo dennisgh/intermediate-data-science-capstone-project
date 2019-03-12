@@ -29,15 +29,17 @@ e.g. https://www.bloomberg.com/research/stocks/people/person.asp?personId=500357
 
 ### PHASE I: Feature generation with text analysis and web scraping
 
-1. Ingest SEC datasets, load data into Pandas. Reduce data, merge ca. 40 quarterly
+1. Acquire SEC datasets from web.
+
+2. Ingest SEC datasets, load data into Pandas. Reduce data, merge ca. 40 quarterly
 data sets into a single file. Do this for: NUM file, SUB file.
 
-2. Extract the full list of companies from the SEC dataset.
+3. Extract the full list of companies from the SEC dataset.
 
-3. For each company:
+4. For each company:
 	* Determine the CEO, CFO at various points in time. This can be extracted from the 10-K filings.
 
-4. For each executive, identify:
+5. For each executive, identify:
 	* Year_of_birth [int]
 	* Gender [cat]
 	* Hire Quarter (see 3.)
@@ -47,21 +49,19 @@ data sets into a single file. Do this for: NUM file, SUB file.
 	* International career experience [Bool]
 	* FirstTimeExecutive [Bool]
 
-This will be accomplished as follows:
+This will be accomplished as follows:  
 	* Query structured, API-accessible data sources: https://www.wikidata.org/wiki/Wikidata:Tools/For_programmers
 	* Query structured, web-accessible data sources: LinkedIn
-	* Query unstructured, web-accessible data sources: general web search, bloomberg biographies.
-
+	* Query unstructured, web-accessible data sources: general web search, bloomberg biographies.  
 	* On the Bloomberg biographies, apply Natural Language Processing to determine features: https://www.nltk.org/book/ch06.html
 	Heuristics used in the analysis, would include:
-	
 	* A list of foreign universities. (int'l education)
 	* A list of foreign cities/countries. (int'l experience)
 	* Regex for common expressions such as "joined company in", "graduated in",
 	"started his/her career"
 	* Deep learning techniques?
 
-PHASE II - CLASSIFICATION OF PERFORMANCE GROWTH WRT. EXECUTIVE FEATURES.
+### PHASE II - CLASSIFICATION OF PERFORMANCE GROWTH WRT. EXECUTIVE FEATURES.
 
 Specifically,  
 
