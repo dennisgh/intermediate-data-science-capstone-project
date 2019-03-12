@@ -50,22 +50,22 @@ data sets into a single file. Do this for: NUM file, SUB file.
 	* FirstTimeExecutive [Bool]
 
 This will be accomplished as follows:  
-	* Query structured, API-accessible data sources: https://www.wikidata.org/wiki/Wikidata:Tools/For_programmers
-	* Query structured, web-accessible data sources: LinkedIn
+	* Query structured, API-accessible data sources: https://www.wikidata.org/wiki/Wikidata:Tools/For_programmers  
+	* Query structured, web-accessible data sources: LinkedIn  
 	* Query unstructured, web-accessible data sources: general web search, bloomberg biographies.  
-	* On the Bloomberg biographies, apply Natural Language Processing to determine features: https://www.nltk.org/book/ch06.html
-	Heuristics used in the analysis, would include:
-	* A list of foreign universities. (int'l education)
-	* A list of foreign cities/countries. (int'l experience)
+	* On the Bloomberg biographies, apply Natural Language Processing to determine features: https://www.nltk.org/book/ch06.html  
+	Heuristics used in the analysis, would include:  
+	* A list of foreign universities. (int'l education)  
+	* A list of foreign cities/countries. (int'l experience)  
 	* Regex for common expressions such as "joined company in", "graduated in",
-	"started his/her career"
-	* Deep learning techniques?
+	"started his/her career"  
+	* Deep learning techniques?  
 
 ### PHASE II - CLASSIFICATION OF PERFORMANCE GROWTH WRT. EXECUTIVE FEATURES.
 
 Specifically,  
 
-* The analysis will focus around 3 pairs:  
+* The analysis will focus around 2 pairs:  
   CEO and Revenue/Sales.  
     CEO: responsible for Sales performance.  
   CFO and Net Income Margin LESS Operating Margin.  
