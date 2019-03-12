@@ -27,35 +27,49 @@ e.g. https://www.bloomberg.com/research/stocks/people/person.asp?personId=500357
 
 ## 4. In brief, outline your approach to solving this problem
 
-1. Load corporate financials into Pandas. Reduce data, merge ca. 40 quarterly
-data sets into a single file, perform EDA.
+### PHASE I: Feature generation with text analysis and web scraping
 
-2. Develop a web scraping script to identify key corporate people, and download their public biographies.
+1. Ingest SEC datasets, load data into Pandas. Reduce data, merge ca. 40 quarterly
+data sets into a single file. Do this for: NUM file, SUB file.
 
-3. Use Natural Language Processing to extract information from this biography.
-https://www.nltk.org/book/ch06.html
+2. Extract the full list of companies from the SEC dataset.
 
-Heuristics used in the analysis, would include:
-* A list of foreign universities. (int'l education)
-* A list of foreign cities/countries. (int'l experience)
-* Look for common expressions such as "joined company in", "graduated in",
-"started his/her career",
+3. For each company:
+	* Determine the CEO, CFO at various points in time. This can be extracted from the 10-K filings.
 
-4. Calculate features and train machine learning models.
+4. For each executive, identify:
+	* Year_of_birth [int]
+	* Gender [cat]
+	* Hire Quarter (see 3.)
+	* Year_of_career_start [int]
+	* International education [Bool]
+	* Ivy League education [Bool]
+	* International career experience [Bool]
+	* FirstTimeExecutive [Bool]
+
+This will be accomplished as follows:
+	* Query structured, API-accessible data sources: https://www.wikidata.org/wiki/Wikidata:Tools/For_programmers
+	* Query structured, web-accessible data sources: LinkedIn
+	* Query unstructured, web-accessible data sources: general web search, bloomberg biographies.
+
+	* On the Bloomberg biographies, apply Natural Language Processing to determine features: https://www.nltk.org/book/ch06.html
+	Heuristics used in the analysis, would include:
+	
+	* A list of foreign universities. (int'l education)
+	* A list of foreign cities/countries. (int'l experience)
+	* Regex for common expressions such as "joined company in", "graduated in",
+	"started his/her career"
+	* Deep learning techniques?
+
+PHASE II - CLASSIFICATION OF PERFORMANCE GROWTH WRT. EXECUTIVE FEATURES.
 
 Specifically,  
 
 * The analysis will focus around 3 pairs:  
   CEO and Revenue/Sales.  
     CEO: responsible for Sales performance.  
-  COO and Operating Margin.  
-    COO: responsible for Cost of Sales and Operating Costs.  
   CFO and Net Income Margin LESS Operating Margin.  
     CFO: responsible for taxes paid, financing expenses and depreciation.  
-
-* CxO characteristics to be analyzed:  
-  Age, Gender, Tenure at company, Career length, int'l education,  
-  Ivy League Education, int'l professional experience, FirstTimeCxO
 
 * Two sets of target data will be considered:  
   Short-term: n=2 and x=5%, Long-term: n=5 and x=10%:  
@@ -76,13 +90,12 @@ Specifically,
    If EDA reveals a typical boost in performance of 15% after 3 years,  
    that could be the long-term pair.
 
- * Ultimately, 6 machine learning models will need to be fitted:  
-   X: CEO_chars
-   Y: Short_term_sign_grwth_Rev, Long_term_sign_grwth_Rev
-   X: COO_chars
-   Y: Short_term_sign_grwth_OpMa, Long_term_sign_grwth_OpMa
-   X: CFO_chars
-   Y: Short_term_sign_grwth_FinMet, Long_term_sign_grwth_FinMet
+ * Ultimately, 4 machine learning models will need to be fitted:  
+   	X: CEO_chars  
+	Y: Short_term_sign_grwth_Rev, Long_term_sign_grwth_Rev  
+
+	X: CFO_chars  
+	Y: Short_term_sign_grwth_FinMet, Long_term_sign_grwth_FinMet  
 
 
 ## 5. What are your deliverables?
