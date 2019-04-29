@@ -10,8 +10,7 @@
 1. The required dataset was provided across multiple .zip files.
 
 Used BeautifulSoup (‘BS4’) to identify the hyperlinks to the zip files.  
-Used Requests.get to download the zip files. To save time (the files were 34MB), they were streamed with parameter stream=True.  
-Used io.BytesIO to stream the data to the zipfile module.  
+Used Requests.get to download the zip files, and extract them with the zipfile module
 Wrote the archive contents to disk.  
 
 2. The dataset was large and needed an efficient file structure.
@@ -27,5 +26,22 @@ Distinguished them by creating a new column [‘Quarter’].
 
 Used pickle to store the dictionary to disk.
 
-### Feature_Generation.ipynb
+### Feature_Generation_pt1.ipynb
 
+5. The web scraping scripts were unstable due to conditions beyond my control (lost connection, blocked by website).
+
+Process the companies in “chunks” and write the results to disk. That way, not much work is lost if the script fails.
+
+6. The officer name and title were contained in full text documents.
+
+Used REGEX to extract officer name and title from the filing forms. These forms had certain form elements in common, which I used to anchor the REGEX. I also hardcoded the 4 or 5 most common exceptions, and accepted the others as a loss.
+
+### Feature_Generation_pt2.ipynb
+
+7. For each company in the list, certain conditions had to be met.
+
+Use DataFrame.groupby() to perform operations such as count and shift for each company.
+
+8. The biographies contained executive features in freeform text.
+
+Use rule-based extraction based on words present in the biography.
