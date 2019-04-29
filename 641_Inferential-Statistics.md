@@ -1,4 +1,4 @@
-# 4.3.4 - CAPSTONE PROJECT - DATA WRANGLING
+# 6.4.1 - CAPSTONE PROJECT - INFERENTIAL STATISTICS
 
 **Assignment:** At this point, you have obtained the data set for your Capstone project, cleaned and wrangled it into a form that's ready for analysis. 
 It's now time to apply the inferential statistics techniques you have learned to explore the data. For example, are there variables that are particularly significant in terms of explaining the answer to your project question? Are there strong correlations between pairs of independent variables, or between an independent and a dependent variable? 
@@ -7,7 +7,7 @@ It's now time to apply the inferential statistics techniques you have learned to
 
 ### EDA.ipynb
 
-In this section we perform EDA on the executive features and some non-financial indicators such as company industry and location.
+In this section we perform EDA on the executive features and non-financial indicators such as company industry and location.
 
 1.1 Age and Tenure by Industry
 
@@ -19,7 +19,11 @@ One hypothesis is generated based on insights gleaned from this chart, which wil
 
 One stacked bar plot and one scatter plot show the distribution of degrees (None to Doctorate) and % of degrees from a top-25 university.
 
-1.3 Gender by Region
+1.3 Awards by Industry
+
+A scatter plot shows the range of awards (% of all CEOs in the industry).
+
+1.4 Gender by Region
 
 The United States is broken up into 5 regions and the gender ratio for each of the regions is determined. This is shown in a bar plot and a scatter plot.
 
@@ -39,5 +43,3 @@ The 0-hypothesis (equal Career Length between industries (1, 4) and (3, 7) ) is 
 To train the decision tree, categorical variables needed to be flattened using “one-hot” categories: use pd.get_dummies(X,drop_first=True) to expand categorical variables to individual columns, dropping one to avoid multi-collinearity.
 
 After training and visualizing the decision tree, the two strongest predictors for “young CEOs” are revealed.
-
-### Financial_Analysis.ipynb
