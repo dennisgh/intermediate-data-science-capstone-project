@@ -24,13 +24,13 @@ Business problem:  What questions or issue you are looking to answer/solve throu
 
 ## 0. Related notebooks: code and graphs.
 
-[Data Acquisition](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/Data_Acquisition.ipynb)
-[Feature Generation pt.1](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/Feature_Generation_pt1.ipynb)
-[Feature Generation pt.2](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/Feature_Generation_pt2.ipynb)
-[Exploratory and Statistical Data Analysis](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/EDA.ipynb)
-
-[434 Capstone Data Wrangling](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/434_Capstone_Project-Data_Wrangling.md)
-[641 Capstone Inferential Statistics Report](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/641_Inferential-Statistics.md)
+[Data Acquisition](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/Data_Acquisition.ipynb)  
+[Feature Generation pt.1](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/Feature_Generation_pt1.ipynb)  
+[Feature Generation pt.2](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/Feature_Generation_pt2.ipynb)  
+[Exploratory and Statistical Data Analysis](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/EDA.ipynb)  
+  
+[434 Capstone Data Wrangling](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/434_Capstone_Project-Data_Wrangling.md)  
+[641 Capstone Inferential Statistics Report](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/641_Inferential-Statistics.md)  
 
 ## 1. Define the problem
 
@@ -103,7 +103,7 @@ And finally, none are women.
 
 **What else do you know about CEOs?**
 
-* The data yielded interesting observations about *age distribution*, about *who holds degrees and who doesn't*, and where *those degrees came from*. What industry do you think holds the most *doctor*ates?
+* Interesting observations about *age distribution*, about *who holds degrees and who doesn't*, and where *those degrees came from*. What industry do you think holds the most *doctor*ates?
 * The industry with the highest share of CEO's *without* a degree also has one of the highest rates of *degrees from Top-25 Universities*. And no, it's not IT!
 * And what about that grouping of young and old CEOs? Any truth to that? Take a look at [the Exploratory and Statistical Data Analysis report](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/PHASE_I/EDA.ipynb) to see what the *machine learn*ed about that.
 
