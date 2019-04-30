@@ -109,7 +109,20 @@ And finally, none are women.
 
 Related: [641 Capstone Inferential Statistics Report](https://github.com/dennisgh/intermediate-data-science-capstone-project/blob/master/641_Inferential-Statistics.md)
 
-### 5.2 Technical and Meta
+### 5.2 How do you know all this?
+
+* These conclusions have been drawn from ca. 800 executive biographies. See Paragraph 3. for source information.
+* There are no sampling biases present in the sample.
+* However, industry *Health, Legal and Professional Services* only has around 20 samples (vs. 150 in most industries). Do take these conclusions with a grain of salt.
+
+### 5.3 What would you do with another 3 months for this project?
+
+* Refine the web scraping logic and text extraction logic to increase the sample size to several thousand.
+* This would allow for higher granularity in the industry analysis.
+* Incorporate financial data to correlate executive features to financial performance.
+* Expand this analysis to CFO features.
+
+### 5.4 Technical and Meta notes
 * It is easy to underestimate the work needed for such a project. Important to “under-promise and over-deliver” for Data Science projects.
 * Beauty in code matters. Time invested in reviewing, commenting, re-factoring and carefully choosing descriptive variable, function and instance names pays dividends when re-visiting a notebook a week or a month later.
 * Study your libraries. This means the difference between 10 to 15 lines of `for`-loops, lists, slow performance and bugs vs. a single function call.
