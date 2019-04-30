@@ -36,10 +36,10 @@ Business problem:  What questions or issue you are looking to answer/solve throu
 
 An investment bank wants to gain greater insight into the characteristics of C-level leadership of American corporations. They want to understand how education, age and tenure and more varies across industries and geographical regions. More specifically, they have asked the Data Scientist to:  
 
-(1) Identify the CEO and CFO for American public companies, past and present.
-(2) Identify the industry and region for these companies.
-(2) Identify characteristics from current and past C-level leadership such as, education, age, gender, career duration.
-(3) use statistical analysis to explore the characteristics of the leadership in function of industry and region.
+1. Identify the CEO and CFO for American public companies, past and present.
+2. Identify the industry and region for these companies.
+3. Identify characteristics from current and past C-level leadership such as, education, age, gender, career duration.
+4. Use statistical analysis to explore the characteristics of the leadership in function of industry and region.
 
 ## 2. Identify your client
 
