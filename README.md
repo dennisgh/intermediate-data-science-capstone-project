@@ -29,4 +29,4 @@ This also contains the charts and decision trees.
 1. CODE: 4 Code Notebooks.
 2. REPORT: `7_Capstone-Milestone.md`
 3. SLIDE SHOW: `Capstone_Final_Slides.pdf`
-4. LIVE PRESENTATION: Scheduled for May 9th, 4:30pm PST, Springboard Office Hours.
+4. LIVE PRESENTATION: Scheduled for May 30th, 4:30pm PST, Springboard Office Hours.
